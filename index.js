@@ -4,9 +4,6 @@ import { agent } from "./agents/agent.js";
 
 dotenv.config();
 
-const result = await run(
-  agent,
-  "Generate a gitignore file for any node js application"
-);
+const result = await run(agent, "What is the weather of Mumbai and Karad");
 
 console.log(result.finalOutput);

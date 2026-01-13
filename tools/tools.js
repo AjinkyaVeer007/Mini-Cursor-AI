@@ -7,6 +7,7 @@ export const getWeatherTool = tool({
   description: "Get the weather for a given city",
   parameters: z.object({ city: z.string() }),
   async execute({ city }) {
+    console.log("⛏️ get_weather tool called");
     return `The weather in ${city} is rainy.`;
   },
 });
@@ -16,6 +17,7 @@ export const getCurrencyTool = tool({
   description: "Get currency for given country",
   parameters: z.object({ country: z.string() }),
   async execute({ country }) {
+    console.log("⛏️ get_currency tool called");
     const curr = {
       india: "Rupees",
       usa: "Dollar",
@@ -33,6 +35,7 @@ export const createAnyFileTool = tool({
     code: z.string().describe("Full file content"),
   }),
   async execute({ fileName, code }) {
+    console.log("⛏️ create_file tool called");
     if (!fs.existsSync("output")) {
       fs.mkdirSync("output");
     }
